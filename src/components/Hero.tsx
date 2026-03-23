@@ -35,6 +35,7 @@ export function Hero() {
               height={300}
               className="h-[300px] w-[300px] rounded-full border-2 border-teal/20 object-cover"
               priority
+              fetchPriority="high"
             />
           </div>
         </div>
