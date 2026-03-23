@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    url: siteUrl,
+    url: "./",
     siteName: "IM Pro",
     locale: "en_US",
     type: "website",
