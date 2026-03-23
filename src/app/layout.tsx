@@ -49,11 +49,20 @@ export const metadata: Metadata = {
     siteName: "IM Pro",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/images/og.png",
+        width: 1200,
+        height: 630,
+        alt: "IM Pro - Performance Marketing for FinTech",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
+    images: ["/images/og.png"],
   },
   robots: {
     index: true,
