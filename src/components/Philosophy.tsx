@@ -16,9 +16,9 @@ export function Philosophy() {
                 <p className="mb-4 text-[13px] font-bold tracking-[0.05em] text-teal/40">
                   {item.num}
                 </p>
-                <h4 className="mb-1.5 text-lg font-bold text-text-bright">
+                <h3 className="mb-1.5 text-lg font-bold text-text-bright">
                   {item.title}
-                </h4>
+                </h3>
                 <p className="text-[15px] leading-[1.6] text-text-main">
                   {item.description}
                 </p>
