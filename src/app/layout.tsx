@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -197,11 +198,7 @@ export default function RootLayout({
             }),
           }}
         />
-        <script
-          data-goatcounter="https://impro.goatcounter.com/count"
-          async
-          src="//gc.zgo.at/count.js"
-        />
+        <Analytics />
       </body>
     </html>
   );
