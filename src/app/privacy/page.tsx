@@ -113,16 +113,16 @@ export default function PrivacyPage() {
             <p>
               We use{" "}
               <a
-                href="https://www.cloudflare.com/web-analytics/"
+                href="https://www.goatcounter.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-teal underline decoration-teal/30 transition-colors hover:text-teal-hover"
               >
-                Cloudflare Web Analytics
+                GoatCounter
               </a>{" "}
-              to collect aggregated, non-identifiable usage metrics (page views,
-              referrers, country of origin). This service does not use cookies
-              and does not track individual visitors.
+              to collect basic, non-identifiable usage metrics (page views,
+              referrers, country of origin). This service does not use cookies,
+              does not track individual visitors, and is fully GDPR compliant.
             </p>
           </section>
 
