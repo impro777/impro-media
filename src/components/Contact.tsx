@@ -102,6 +102,8 @@ export function Contact() {
               <input
                 type="text"
                 name="company_url"
+                aria-hidden="true"
+                aria-label="Do not fill this field"
                 className="absolute -left-[9999px] opacity-0"
                 tabIndex={-1}
                 autoComplete="off"
@@ -146,10 +148,11 @@ export function Contact() {
                   />
                 </div>
                 <div className="space-y-1.5">
-                  <label className="flex items-baseline gap-1 text-sm font-semibold text-text-main">
+                  <label htmlFor="budget" className="flex items-baseline gap-1 text-sm font-semibold text-text-main">
                     Monthly Ad Budget <span className="text-xs text-teal">*</span>
                   </label>
                   <select
+                    id="budget"
                     name="budget"
                     required
                     className="w-full rounded-lg border border-card-border bg-black/15 px-3.5 py-3 text-[15px] text-text-dim outline-none transition-all focus:border-teal focus:shadow-[0_0_0_3px_var(--color-teal-glow)] [&>option]:bg-white [&>option]:text-[#1a1a2e]"
@@ -180,12 +183,13 @@ export function Contact() {
 
               <div className="mt-6 flex items-start gap-2">
                 <input
+                  id="consent"
                   type="checkbox"
                   name="consent"
                   required
                   className="mt-[3px] h-4 w-4 shrink-0 accent-teal"
                 />
-                <label className="text-[13px] leading-[1.5] text-text-dim">
+                <label htmlFor="consent" className="text-[13px] leading-[1.5] text-text-dim">
                   I agree to the{" "}
                   <a
                     href="/privacy"

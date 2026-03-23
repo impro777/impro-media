@@ -5,11 +5,11 @@ import { FadeIn } from "./ui/FadeIn";
 const CLIENT_LOGOS = [
   { name: "Planet42", src: "/images/clients/planet42.png", width: 110, imgW: 256, imgH: 44 },
   { name: "CreditPrime", src: "/images/clients/creditprime.png", width: 130, imgW: 260, imgH: 65 },
-  { name: "Moneza", src: "/images/clients/moneza.png", width: 100, imgW: 260, imgH: 86 },
-  { name: "Ezaem", src: "/images/clients/ezaem.png", width: 100, imgW: 260, imgH: 46 },
-  { name: "NetCredit", src: "/images/clients/netcredit.png", width: 110, imgW: 260, imgH: 42 },
-  { name: "Zing", src: "/images/clients/zing.png", width: 80, imgW: 260, imgH: 121 },
-  { name: "TWINO", src: "/images/clients/twino.png", width: 90, imgW: 260, imgH: 56 },
+  { name: "Moneza", src: "/images/clients/moneza.png", width: 100, imgW: 200, imgH: 66 },
+  { name: "Ezaem", src: "/images/clients/ezaem.png", width: 100, imgW: 200, imgH: 35 },
+  { name: "NetCredit", src: "/images/clients/netcredit.png", width: 110, imgW: 220, imgH: 35 },
+  { name: "Zing", src: "/images/clients/zing.png", width: 80, imgW: 160, imgH: 74 },
+  { name: "TWINO", src: "/images/clients/twino.png", width: 90, imgW: 180, imgH: 38 },
 ];
 
 export function Industries() {
