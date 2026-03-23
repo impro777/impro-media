@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IM Pro - Performance Marketing That Drives Real Results</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #243665;
+  line-height: 1.6;
+  background: #fff;
+}
+
+:root {
+  --navy: #243665;
+  --navy-dark: #1a2a4f;
+  --teal: #8BD8BD;
+  --teal-light: #c2ede0;
+  --teal-dark: #6bc4a4;
+  --teal-bg: #f0faf6;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-800: #1f2937;
+  --white: #ffffff;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===== HEADER ===== */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(16px);
+  transition: border-color 0.3s;
+  border-bottom: 1px solid transparent;
+}
+.header.scrolled { border-bottom-color: var(--gray-200); }
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.header-logo img { height: 32px; }
+.header-nav { display: flex; align-items: center; gap: 32px; }
+.header-nav a {
+  text-decoration: none;
+  color: var(--gray-500);
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.header-nav a:hover { color: var(--navy); }
+.header-cta {
+  background: var(--navy) !important;
+  color: var(--white) !important;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600 !important;
+  transition: background 0.2s !important;
+}
+.header-cta:hover { background: var(--navy-dark) !important; }
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+.hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--navy); margin: 5px 0;
+}
+
+/* ===== HERO ===== */
+.hero {
+  padding: 140px 0 80px;
+  background: var(--white);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.hero-content {}
+.hero h1 {
+  font-size: clamp(36px, 4.5vw, 52px);
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.12;
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
+}
+.hero p {
+  font-size: 18px;
+  color: var(--gray-500);
+  max-width: 480px;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+.hero-actions { display: flex; align-items: center; gap: 16px; }
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--navy);
+  color: var(--white);
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: var(--navy-dark); transform: translateY(-1px); }
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--navy);
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1.5px solid var(--gray-300);
+  transition: border-color 0.2s, background 0.2s;
+}
+.btn-outline:hover { border-color: var(--navy); background: var(--gray-50); }
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+.hero-photo {
+  position: relative;
+}
+.hero-photo img {
+  width: 360px;
+  height: 360px;
+  border-radius: 24px;
+  object-fit: cover;
+}
+.hero-badge {
+  position: absolute;
+  bottom: -16px;
+  right: -16px;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 10px 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-badge img { height: 32px; }
+.hero-badge span {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-600);
+  line-height: 1.3;
+}
+
+/* ===== METRICS ===== */
+.metrics {
+  padding: 48px 0;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+}
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+.metric-item .metric-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+.metric-item .metric-label {
+  font-size: 14px;
+  color: var(--gray-500);
+}
+
+/* ===== SECTIONS ===== */
+section { padding: 96px 0; }
+.section-header {
+  margin-bottom: 48px;
+}
+.section-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--teal-dark);
+  margin-bottom: 8px;
+}
+.section-heading {
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.section-subheading {
+  font-size: 16px;
+  color: var(--gray-500);
+  max-width: 480px;
+  line-height: 1.7;
+}
+
+/* ===== SERVICES ===== */
+.services { background: var(--white); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.service-card {
+  padding: 32px;
+  border: 1px solid var(--gray-200);
+  border-radius: 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.service-card:hover {
+  border-color: var(--teal);
+  box-shadow: 0 4px 16px rgba(139,216,189,0.1);
+}
+.service-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.service-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--teal-bg);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.service-icon svg { width: 22px; height: 22px; color: var(--teal-dark); }
+.service-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.service-card p {
+  font-size: 15px;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* ===== ABOUT ===== */
+.about { background: var(--gray-50); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.about-text p {
+  font-size: 16px;
+  color: var(--gray-600);
+  margin-bottom: 16px;
+  line-height: 1.8;
+}
+.about-text p:first-child {
+  font-size: 18px;
+  color: var(--navy);
+  font-weight: 600;
+}
+
+/* Philosophy */
+.philosophy {
+  margin-top: 40px;
+}
+.phi-item {
+  display: flex;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+.phi-item:last-child { border-bottom: none; }
+.phi-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--teal);
+  border-radius: 50%;
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+.phi-item h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+.phi-item p {
+  font-size: 14px;
+  color: var(--gray-500);
+}
+
+.about-right {}
+.about-photo-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid var(--gray-200);
+}
+.about-photo-card img.founder-img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+.about-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.about-role {
+  font-size: 14px;
+  color: var(--gray-500);
+  margin-bottom: 16px;
+}
+.about-partner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-200);
+}
+.about-partner img { height: 36px; }
+.about-partner span { font-size: 13px; color: var(--gray-500); }
+
+/* ===== INDUSTRIES ===== */
+.industries { background: var(--white); }
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.industry-card {
+  background: var(--teal-bg);
+  border-radius: 16px;
+  padding: 40px;
+  transition: transform 0.2s;
+}
+.industry-card:hover { transform: translateY(-2px); }
+.industry-card .ind-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.industry-card .ind-icon svg { width: 24px; height: 24px; color: var(--navy); }
+.industry-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.industry-card p {
+  font-size: 15px;
+  color: var(--gray-600);
+  line-height: 1.7;
+}
+
+/* ===== CONTACT ===== */
+.contact { background: var(--gray-50); }
+.contact-layout {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 64px;
+}
+.contact-left {}
+.contact-left h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.contact-left p {
+  font-size: 15px;
+  color: var(--gray-500);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.contact-fact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.contact-fact .cf-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contact-fact .cf-icon svg { width: 16px; height: 16px; color: var(--navy); }
+.contact-fact span { font-size: 14px; color: var(--gray-600); }
+
+.contact-form {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 36px;
+  border: 1px solid var(--gray-200);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form-group { margin-bottom: 16px; }
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.form-group label .req { color: var(--teal-dark); }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--gray-800);
+  background: var(--white);
+  transition: border-color 0.2s;
+  outline: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--teal);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.form-consent input[type="checkbox"] {
+  width: 16px; height: 16px;
+  margin-top: 2px;
+  accent-color: var(--teal-dark);
+  flex-shrink: 0;
+}
+.form-consent label {
+  font-size: 13px;
+  color: var(--gray-500);
+  line-height: 1.5;
+}
+.form-consent a { color: var(--navy); text-decoration: underline; }
+.btn-submit {
+  width: 100%;
+  padding: 14px 32px;
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-submit:hover { background: var(--navy-dark); }
+
+/* ===== FOOTER ===== */
+.footer {
+  padding: 32px 0;
+  border-top: 1px solid var(--gray-200);
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-logo img { height: 24px; }
+.footer-copy {
+  font-size: 13px;
+  color: var(--gray-500);
+}
+.footer-links a {
+  color: var(--gray-500);
+  text-decoration: none;
+  font-size: 13px;
+  margin-left: 20px;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--navy); }
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .header-nav { display: none; }
+  .hamburger { display: block; }
+  .hero { padding: 110px 0 60px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+  .hero p { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
+  .hero-visual { order: -1; }
+  .hero-photo img { width: 240px; height: 240px; }
+  .metrics-grid { grid-template-columns: 1fr; gap: 16px; }
+  section { padding: 64px 0; }
+  .services-grid,
+  .industries-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-right { order: -1; }
+  .contact-layout { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
+  .footer-links a { margin: 0 10px; }
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#" class="header-logo">
+      <img src="assets/logo-color.svg" alt="IM Pro">
+    </a>
+    <nav class="header-nav">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#industries">Industries</a>
+      <a href="#contact" class="header-cta">Get in Touch</a>
+    </nav>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <h1>Performance Marketing That Drives Real Results</h1>
+        <p>Google Ads, Meta Ads & Microsoft Ads management for fintech and e-commerce businesses.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Let's Talk</a>
+          <a href="#services" class="btn-outline">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-photo">
+          <img src="assets/founder-natural.jpg" alt="Aleksandrs Jelesins">
+          <div class="hero-badge">
+            <img src="assets/google-partner.png" alt="Google Partner">
+            <span>Google<br>Partner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<div class="metrics">
+  <div class="container">
+    <div class="metrics-grid">
+      <div class="metric-item">
+        <div class="metric-value">15+ Years Experience</div>
+        <div class="metric-label">In performance marketing since 2010</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-value">E-commerce & Fintech Focus</div>
+        <div class="metric-label">Deep vertical expertise</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-value">Data-Driven Approach</div>
+        <div class="metric-label">Every decision backed by data</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Services</div>
+      <h2 class="section-heading">What I Do</h2>
+      <p class="section-subheading">Focused expertise across the platforms that drive revenue for your business.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-top">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+          <h3>Google Ads</h3>
+        </div>
+        <p>Search, Shopping, and Performance Max campaigns built for measurable growth.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-top">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </div>
+          <h3>Meta Ads</h3>
+        </div>
+        <p>Facebook & Instagram campaigns that reach the right audience at the right time.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-top">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20"/></svg>
+          </div>
+          <h3>Microsoft Ads</h3>
+        </div>
+        <p>Bing campaigns for additional reach and lower-cost conversions.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-top">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+          </div>
+          <h3>Analytics & Reporting</h3>
+        </div>
+        <p>Tracking setup, custom dashboards, and data pipelines for clear decision-making.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">About</div>
+      <h2 class="section-heading">How I Work</h2>
+    </div>
+    <div class="about-grid fade-in">
+      <div class="about-text">
+        <p>I'm a solo specialist, not an agency assembly line.</p>
+        <p>With 15+ years in performance marketing since 2010, I focus on fewer clients to deliver better results. Every decision is backed by data, not opinions.</p>
+        <p>I build systems and automation so your campaigns run reliably while I focus on strategy and optimization. You work directly with me - no account managers, no juniors, no handoffs.</p>
+        <div class="philosophy">
+          <div class="phi-item">
+            <div class="phi-dot"></div>
+            <div>
+              <h4>Analyze First</h4>
+              <p>Understand the data before making changes</p>
+            </div>
+          </div>
+          <div class="phi-item">
+            <div class="phi-dot"></div>
+            <div>
+              <h4>Build Systems</h4>
+              <p>Reliable processes that scale with your growth</p>
+            </div>
+          </div>
+          <div class="phi-item">
+            <div class="phi-dot"></div>
+            <div>
+              <h4>Measure Everything</h4>
+              <p>If it can't be measured, it can't be improved</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-right">
+        <div class="about-photo-card">
+          <img src="assets/founder.png" alt="Aleksandrs Jelesins" class="founder-img">
+          <div class="about-name">Aleksandrs Jelesins</div>
+          <div class="about-role">Performance Marketing Specialist</div>
+          <div class="about-partner">
+            <img src="assets/google-partner.png" alt="Google Partner">
+            <span>Google Partner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="industries" id="industries">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Industries</div>
+      <h2 class="section-heading">Industries I Specialize In</h2>
+    </div>
+    <div class="industries-grid">
+      <div class="industry-card fade-in">
+        <div class="ind-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Fintech</h3>
+        <p>Credit products, loans, and financial services. Complex funnels, strict compliance, long attribution windows. I've managed millions in fintech ad spend and know what drives qualified applications.</p>
+      </div>
+      <div class="industry-card fade-in">
+        <div class="ind-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+        </div>
+        <h3>E-commerce</h3>
+        <p>Online stores, product feeds, and Shopping campaigns. From feed optimization to Performance Max, I help e-commerce businesses scale revenue while maintaining healthy ROAS.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Contact</div>
+      <h2 class="section-heading">Let's Discuss Your Goals</h2>
+      <p class="section-subheading">Tell me about your business and I'll get back to you within 24 hours.</p>
+    </div>
+    <div class="contact-layout fade-in">
+      <div class="contact-left">
+        <h3>Ready to improve your ad performance?</h3>
+        <p>Whether you're launching your first campaigns or optimizing existing ones, I'd love to hear about your goals.</p>
+        <div class="contact-fact">
+          <div class="cf-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <span>Europe-based, working globally</span>
+        </div>
+        <div class="contact-fact">
+          <div class="cf-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <span>Response within 24 hours</span>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="return false;">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Name <span class="req">*</span></label>
+            <input type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label>Email <span class="req">*</span></label>
+            <input type="email" placeholder="your@email.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Website / Landing Page</label>
+            <input type="url" placeholder="https://your-website.com">
+          </div>
+          <div class="form-group">
+            <label>Monthly Ad Budget</label>
+            <select>
+              <option value="">Select range</option>
+              <option>Less than $5,000</option>
+              <option>$5,000 - $15,000</option>
+              <option>$15,000 - $50,000</option>
+              <option>$50,000+</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Message <span class="req">*</span></label>
+          <textarea placeholder="Tell me about your business and goals" required></textarea>
+        </div>
+        <div class="form-consent">
+          <input type="checkbox" id="consent-c" required>
+          <label for="consent-c">I agree to the <a href="#">Privacy Policy</a></label>
+        </div>
+        <button type="submit" class="btn-submit">Let's Go</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="#" class="footer-logo">
+      <img src="assets/logo-color.svg" alt="IM Pro">
+    </a>
+    <div class="footer-copy">&copy; 2010-2026 IM Pro. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
+});
+</script>
+</body>
+</html>

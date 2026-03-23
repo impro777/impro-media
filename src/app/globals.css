@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg-base: #141e33;
+  --color-bg-hero: #1a2845;
+  --color-bg-section-a: #162040;
+  --color-bg-section-b: #18243e;
+  --color-bg-card: rgba(255, 255, 255, 0.04);
+  --color-bg-card-hover: rgba(255, 255, 255, 0.07);
+
+  --color-navy: #243665;
+  --color-navy-dark: #1a2a4f;
+
+  --color-teal: #8BD8BD;
+  --color-teal-hover: #9fe0ca;
+  --color-teal-subtle: rgba(139, 216, 189, 0.06);
+  --color-teal-glow: rgba(139, 216, 189, 0.12);
+
+  --color-text-bright: #f1f5f9;
+  --color-text-main: #b8c4d6;
+  --color-text-dim: rgba(184, 196, 214, 0.5);
+
+  --color-card-border: rgba(255, 255, 255, 0.07);
+  --color-card-border-hover: rgba(139, 216, 189, 0.2);
+
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --shadow-form: 0 12px 40px rgba(0, 0, 0, 0.25);
+
+  --font-sans: var(--font-inter);
+}
+
+:root {
+  --section-py: 96px;
+  --radius: 12px;
+  --radius-lg: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg-base);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+}
