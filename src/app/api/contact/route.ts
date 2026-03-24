@@ -51,7 +51,7 @@ export async function POST(request: Request) {
   }
 
   const RESEND_API_KEY = process.env.RESEND_API_KEY;
-  const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "hello@impro-media.com";
+  const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "alex@impro-media.com";
 
   if (!RESEND_API_KEY) {
     console.error("RESEND_API_KEY is not set");
