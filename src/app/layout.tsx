@@ -119,61 +119,6 @@ export default function RootLayout({
                     "Microfinance",
                     "Cost Per Acquisition Optimization",
                   ],
-                  review: [
-                    {
-                      "@type": "Review",
-                      author: {
-                        "@type": "Person",
-                        name: "Eerik Oja",
-                        jobTitle: "Co-founder",
-                        worksFor: { "@type": "Organization", name: "Planet42" },
-                      },
-                      reviewBody:
-                        "Aleksandrs rebuilt marketing tracking from the ground up, eliminating inefficiencies in paid user acquisition and more than doubling quality leads volume using paid media channels while staying within budgets.",
-                    },
-                    {
-                      "@type": "Review",
-                      author: {
-                        "@type": "Person",
-                        name: "Małgorzata Nęcka",
-                        jobTitle: "Chief Marketing Officer",
-                        worksFor: {
-                          "@type": "Organization",
-                          name: "NetCredit",
-                        },
-                      },
-                      reviewBody:
-                        "Alex developed a full conversion tracking system and technical documentation for our backend integration. His skills have repeatedly helped improve the company's results. Working with Alex is working with an absolute Professional Expert!",
-                    },
-                    {
-                      "@type": "Review",
-                      author: {
-                        "@type": "Person",
-                        name: "Roberts Bite",
-                        jobTitle: "Chief Marketing Manager",
-                        worksFor: {
-                          "@type": "Organization",
-                          name: "TWINO Group",
-                        },
-                      },
-                      reviewBody:
-                        "An exceptional expert in digital and growth marketing, whose opinion and insight have been highly valued by senior management.",
-                    },
-                    {
-                      "@type": "Review",
-                      author: {
-                        "@type": "Person",
-                        name: "Alexander Tsatkin",
-                        jobTitle: "VP Mobile",
-                        worksFor: {
-                          "@type": "Organization",
-                          name: "Matomy Media Group",
-                        },
-                      },
-                      reviewBody:
-                        "His expertise in media buying and optimization is one of the best around. He has been able to consistently hit high revenue numbers despite the changing landscape.",
-                    },
-                  ],
                 },
                 {
                   "@type": "Person",
